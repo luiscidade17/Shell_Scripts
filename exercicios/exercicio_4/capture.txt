@@ -1,0 +1,3 @@
+Comando 'chmopd' não encontrado, você quis dizer:
+  comando 'chmod' do deb coreutils (8.32-4.1ubuntu1)
+Experimente: sudo apt install <deb name>
