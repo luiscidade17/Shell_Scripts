@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+  my-http-net:
+  my-http-net2:
+
+services:
+  myweb:
+    build: ../web/.
+    container_name: my-enginx
+    volumes:
+      - ../web/src/.:/my-web
+      - ../web/pics/.:/my-web/pics
+      - ../web/cfg/.:/etc/nginx/conf.d/.
+    ports:
+      - 8080:80
+    networks:
+      - my-http-net
+  myweb2:
+    build: ../web/.
+    container_name: my-enginx2
+    volumes:
+      - ../web/src/.:/my-web
+      - ../web/pics/.:/my-web/pics
+      - ../web/cfg/.:/etc/nginx/conf.d/.
+    ports:
+      - 8000:80
+    networks:
+      - my-http-net2
+    
