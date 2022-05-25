@@ -1,0 +1,22 @@
+#!/bin/bash
+whiptail --title "Vamos Começar a atualizar o Sistema" --msgbox "Escolha OK para continuar a Atualizar" --fb 10 50
+
+sleep 4
+
+if whiptail --title "Vamos Atualizar?" --yesno "Quer Atualizar o Sistema?." 10 50
+then
+   echo "Você escolheu atualizar $?."
+else
+   echo "Você escolheu No. O status de saída é  $?."
+fi
+
+if [ $? -eq 0 ];then
+            {
+                sleep 1
+                echo 5
+                sudo apt update && sudo apt upgrade
+            } 
+                else
+        whiptail --title "¡Consejos de Nginx!" --msgbox "Gracias por usar ~~~" 10 60
+        exit 1
+    fi
